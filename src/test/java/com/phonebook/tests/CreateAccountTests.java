@@ -23,7 +23,6 @@ public class CreateAccountTests extends TestBase{
         driver.findElement(By.name("registration")).click();
 //verify SignOut button is displayed
         Assert.assertTrue(isElementPresent(By.xpath("//button[.='Sign Out']")));
-
     }
 
 

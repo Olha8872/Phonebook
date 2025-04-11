@@ -11,5 +11,4 @@ public void isHomeComponentPresentTest(){
         //System.out.println("Home Component " + isHomeComponentPresent());
         Assert.assertTrue(isHomeComponentPresent());
     }
-
 }
