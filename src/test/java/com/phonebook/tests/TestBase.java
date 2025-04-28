@@ -1,35 +1,56 @@
 package com.phonebook.tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import com.phonebook.fw.ApplicationManager;
+import org.openqa.selenium.remote.Browser;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
-import java.time.Duration;
+import java.lang.reflect.Method;
+import java.util.Arrays;
 
 public class TestBase {
-    WebDriver driver;
+    Logger logger = LoggerFactory.getLogger(TestBase.class);
+
+    // Инициализация ApplicationManager с параметром browser
+    protected static ApplicationManager app =
+            new ApplicationManager(System.getProperty("browser", Browser.CHROME.browserName()));
+
+    @BeforeSuite
+    public void setUp() {
+        // Устанавливаем драйвер в зависимости от браузера
+        String browser = System.getProperty("browser", "chrome").toLowerCase();
+        if (browser.equals("chrome")) {
+            System.setProperty("webdriver.chrome.driver", "C:\\Tools\\chromedriver.exe");
+        } else if (browser.equals("firefox")) {
+            System.setProperty("webdriver.gecko.driver", "C:\\Tools\\geckodriver.exe");
+        } // Добавьте другие браузеры по необходимости
+        app.init();
+    }
+
+    @AfterSuite
+    public void tearDown() {
+        app.stop();
+    }
 
     @BeforeMethod
-    public void setUp() {
-        driver = new ChromeDriver();
-        driver.get("https://telranedu.web.app");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    public void startTest(Method method, Object[] p) {
+        logger.info("Start test: " + method.getName() + " with parameters " + Arrays.asList(p));
     }
 
-    @AfterMethod (enabled = false)
-    public void tearDown() {
-        driver.quit();
+    @AfterMethod
+    public void stopTest(ITestResult result) {
+        if (result.isSuccess()) {
+            logger.info("PASSED: " + result.getMethod().getMethodName());
+        } else {
+            // Логирование при неудачном тесте с путем до скриншота
+            logger.error("FAILED: " + result.getMethod().getMethodName() + " Screenshot path: " + app.getUser().takeScreenshot());
+        }
+        logger.info("Stop test");
+        logger.info("==========================================");
     }
-
-    public boolean isHomeComponentPresent(){
-         return driver.findElements(By.cssSelector("div:nth-child(2)>div>div>h1")).size()>0;
-    }
-
-    public boolean isElementPresent(By locator){
-    return driver.findElements(locator).size()>0; // return any element tru/false return
-    }
-
 }

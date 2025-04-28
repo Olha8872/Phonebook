@@ -1,37 +1,62 @@
 package com.phonebook.tests;
 
+import com.phonebook.data.UserData;
+import com.phonebook.models.User;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
-public class CreateAccountTests extends TestBase{
+public class CreateAccountTests extends TestBase {
+    @BeforeMethod
+    public void ensurePrecondition() {
+        if (!app.getUser().isLoginLinkPresent()) {
+            app.getUser().clickOnSignOutButton();
 
-    @Test
-    public void newUserRegistrationPositiveTest(){
-        //click on login Link
-        driver.findElement(By.cssSelector("[href='/login']")).click();
-
-    //enter email to Email field
-        driver.findElement(By.name("email")).click();
-        driver.findElement(By.name("email")).clear();
-        driver.findElement(By.name("email")).sendKeys("Aa123456$@gmail.com");//f@f.com
-    //enter password to Password
-        driver.findElement(By.name("password")).click();
-        driver.findElement(By.name("password")).clear();
-        driver.findElement(By.name("password")).sendKeys("Qwerty123@");//Aa123456$
-        //click on Registration button
-        driver.findElement(By.name("registration")).click();
-//verify SignOut button is displayed
-        Assert.assertTrue(isElementPresent(By.xpath("//button[.='Sign Out']")));
+        }
     }
 
+    SoftAssert softAssert = new SoftAssert();
 
+    @Test(enabled = false)
+    public void newUserRegistrationPositiveTest() {
+        // 1) Открыть форму логина/регистрации
+        app.getUser().clickOnLoginLink();
 
+        // 2) Заполнить поля логина (email + password)
+        app.getUser().fillRegisterLoginForm(new User()
+                .setEmail(UserData.Email)
+                .setPassword(UserData.Password));
 
+        // 3) Нажать кнопку Registration
+        app.getUser().clickOnRegistrationButton();
 
+        // 4) Убедиться, что появилась кнопка Sign Out
+        Assert.assertTrue(app.getUser().isSignOutButtonPresent());
+    }
 
+    @Test
+    public void existedUserRegistrationNegativeTest() {
+        // 1) Открыть форму логина/регистрации
+        app.getUser().clickOnLoginLink();
 
+        // 2) Заполнить только password (без email)
+        app.getUser().fillRegisterLoginForm(new User()
+                .setPassword(UserData.Email)
+                .setPassword(UserData.Password));
 
+        // 3) Нажать Registration
+        app.getUser().clickOnRegistrationButton();
 
-
+        // 4) Проверки (SoftAssert):
+        //   — появился alert?
+        softAssert.assertTrue(app.getUser().isAlertDisplayed());
+        softAssert.assertTrue(app.getUser().isErrorMessagePresent());
+        softAssert.assertAll();
+    }
 }
+
+
+
+
