@@ -1,13 +1,13 @@
 package com.phonebook.fw;
 
 import com.phonebook.models.Contact;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.List;
+import java.time.Duration;
 
 public class ContactHelper extends BaseHelper {
 
@@ -34,21 +34,37 @@ public class ContactHelper extends BaseHelper {
         click(By.cssSelector("[href='/add']"));
     }
 
-    public boolean isContactAdded(String text) {
-        List<WebElement> contacts = driver.findElements(By.cssSelector("h2"));
-        for (WebElement element : contacts) {
-            if (element.getText().contains(text)) {
-                return true;
-            }
+    public boolean waitForContactToAppear(String name) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15)); // Увеличен тайм-аут
+        try {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(
+                    By.xpath("//h2[contains(text(),'" + name + "')]")
+            ));
+            logger.info("Контакт " + name + " появился успешно.");
+            return true;
+        } catch (TimeoutException e) {
+            logger.error("Контакт " + name + " не появился за отведенное время.");
+            return false;
+        } catch (Exception e) {
+            logger.error("Произошла неожиданная ошибка при ожидании контакта: " + e.getMessage());
+            return false;
         }
-        return false;
     }
+
+
 
     public void deleteContact() {
         if (isElementPresent(By.xpath("(//div[contains(@class,'contact-item-detailed_card')]//button[text()='Remove'])[1]"))) {
             pause(1000);
             click(By.xpath("(//div[contains(@class,'contact-item-detailed_card')]//button[text()='Remove'])[1]"));
             logger.info("Contact removed.");
+            try {
+                Alert alert = driver.switchTo().alert();
+                alert.accept();
+                logger.info("Alert accepted after contact deletion.");
+            } catch (NoAlertPresentException e) {
+                logger.info("No alert appeared after contact deletion.");
+            }
         } else {
             logger.warn("No contact found to delete.");
         }
@@ -66,8 +82,3 @@ public class ContactHelper extends BaseHelper {
         return wd.findElements(By.xpath("//h2[text()='" + name + "']")).size() > 0;
     }
 }
-
-
-
-
-

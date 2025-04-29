@@ -1,0 +1,14 @@
+package com.phonebook.tests;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class HomePageTests extends TestBase {
+
+    @Test
+    public void isHomeComponentPresentTest() {
+        // Проверка наличия главного компонента на домашней странице
+        Assert.assertTrue(app.getHome().isHomeComponentPresent());
+    }
+}
+

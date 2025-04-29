@@ -50,7 +50,6 @@ public class DeleteContactTests extends TestBase {
         try {
             // Попробуем обработать алерт, если он появляется
             Alert alert = wait.until(ExpectedConditions.alertIsPresent());
-            System.out.println("Alert appeared: " + alert.getText()); // Логируем текст алерта
             alert.accept(); // Принять алерт
             System.out.println("Alert accepted successfully");
         } catch (NoAlertPresentException e) {

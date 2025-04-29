@@ -8,11 +8,15 @@ import com.phonebook.utils.DataProviders;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class AddContactTests extends TestBase {
     private String lastAddedContactName;
@@ -28,7 +32,7 @@ public class AddContactTests extends TestBase {
     }
 
     @Test
-    public void addContactPositiveTest() {
+             public void addContactPositiveTest() {
         app.getContact().clickOnAddLink();
         lastAddedContactName = ContactData.Name;
         app.getContact().fillContactForm(new Contact()
@@ -42,7 +46,7 @@ public class AddContactTests extends TestBase {
         // Click Save and handle potential alert
         app.getContact().clickOnSaveButton();
 
-        WebDriver driver = app.getDriver();  // Use WebDriver from ApplicationManager
+        WebDriver driver = app.getDriver();
         try {
             Alert alert = driver.switchTo().alert();
             alert.accept(); // Accept the alert if it appears
@@ -52,7 +56,9 @@ public class AddContactTests extends TestBase {
         }
         System.out.println("Checking if contact with name " + lastAddedContactName + " is added");
 
-        Assert.assertTrue(app.getContact().isContactAdded(lastAddedContactName));
+        // Wait for contact to appear on page and then assert
+        Assert.assertTrue(app.getContact().waitForContactToAppear(lastAddedContactName),
+                "Contact " + lastAddedContactName + " was not added successfully.");
     }
 
     @Test(dataProvider = "addNewContact", dataProviderClass = DataProviders.class)
@@ -70,7 +76,7 @@ public class AddContactTests extends TestBase {
                 .setDescription(description));
         app.getContact().clickOnSaveButton();
 
-        WebDriver driver = app.getDriver();  // Use WebDriver from ApplicationManager
+        WebDriver driver = app.getDriver();
         try {
             Alert alert = driver.switchTo().alert();
             alert.accept(); // Accept the alert if it appears
@@ -79,7 +85,8 @@ public class AddContactTests extends TestBase {
             System.out.println("No alert appeared.");
         }
 
-        Assert.assertTrue(app.getContact().isContactAdded(name));
+        Assert.assertTrue(app.getContact().waitForContactToAppear(name),
+                "Contact " + name + " was not added successfully.");
     }
 
     @Test(dataProvider = "addNewContactWithCsv", dataProviderClass = DataProviders.class)
@@ -88,7 +95,7 @@ public class AddContactTests extends TestBase {
         app.getContact().fillContactForm(contact);
         app.getContact().clickOnSaveButton();
 
-        WebDriver driver = app.getDriver();  // Use WebDriver from ApplicationManager
+        WebDriver driver = app.getDriver();
         try {
             Alert alert = driver.switchTo().alert();
             alert.accept(); // Accept the alert if it appears
@@ -97,23 +104,19 @@ public class AddContactTests extends TestBase {
             System.out.println("No alert appeared.");
         }
 
-        Assert.assertTrue(app.getContact().isContactAdded(contact.getName()));
-        Assert.assertTrue(app.getContact().isContactAdded(lastAddedContactName),
-                "Contact " + lastAddedContactName + " not found after adding!");
-
+        Assert.assertTrue(app.getContact().waitForContactToAppear(contact.getName()),
+                "Contact " + contact.getName() + " was not added successfully.");
     }
 
     @AfterMethod
     public void postCondition() {
         try {
-            Alert alert = app.getDriver().switchTo().alert();  // Заменили driver на app.getDriver()
-            alert.accept(); // Принять алерт, если он есть
+            Alert alert = app.getDriver().switchTo().alert();
+            alert.accept(); // Accept the alert if it appears
             System.out.println("Alert accepted successfully");
         } catch (NoAlertPresentException e) {
-            // Игнорируем, если алерт не появился
             System.out.println("No alert appeared.");
         }
         app.getContact().deleteContact();
     }
 }
-

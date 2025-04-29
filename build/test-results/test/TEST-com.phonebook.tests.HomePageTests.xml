@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.phonebook.tests.HomePageTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-04-28T13:49:42" hostname="DESKTOP-6E1M17H" time="0.016">
+  <properties/>
+  <testcase name="isHomeComponentPresentTest" classname="com.phonebook.tests.HomePageTests" time="0.016"/>
+  <system-out><![CDATA[15:49:32.523 [Test worker] INFO com.phonebook.tests.TestBase -- Start test: isHomeComponentPresentTest with parameters []
+15:49:32.524 [Test worker] INFO com.phonebook.utils.MyListener -- Before find elementsBy.cssSelector: div:nth-child(2)>div>div>h1
+15:49:32.525 [Test worker] INFO com.phonebook.utils.MyListener -- *******************************************
+15:49:42.532 [Test worker] INFO com.phonebook.utils.MyListener -- List size0
+15:49:42.532 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************************
+15:49:42.532 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: [href='/home']
+15:49:42.532 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:42.561 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: [href='/home']
+15:49:42.561 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:42.701 [Test worker] INFO com.phonebook.utils.MyListener -- Before find elementsBy.cssSelector: div:nth-child(2)>div>div>h1
+15:49:42.701 [Test worker] INFO com.phonebook.utils.MyListener -- *******************************************
+15:49:42.717 [Test worker] INFO com.phonebook.utils.MyListener -- List size1
+15:49:42.717 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************************
+15:49:42.719 [Test worker] INFO com.phonebook.tests.TestBase -- PASSED: isHomeComponentPresentTest
+15:49:42.719 [Test worker] INFO com.phonebook.tests.TestBase -- Stop test
+15:49:42.720 [Test worker] INFO com.phonebook.tests.TestBase -- ==========================================
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

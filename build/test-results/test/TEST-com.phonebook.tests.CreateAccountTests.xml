@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.phonebook.tests.CreateAccountTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-04-28T13:49:27" hostname="DESKTOP-6E1M17H" time="1.25">
+  <properties/>
+  <testcase name="existedUserRegistrationNegativeTest" classname="com.phonebook.tests.CreateAccountTests" time="1.25"/>
+  <system-out><![CDATA[15:49:16.426 [Test worker] INFO com.phonebook.tests.TestBase -- Start test: existedUserRegistrationNegativeTest with parameters []
+15:49:16.426 [Test worker] INFO com.phonebook.utils.MyListener -- Before find elementsBy.cssSelector: [href='/login']
+15:49:16.426 [Test worker] INFO com.phonebook.utils.MyListener -- *******************************************
+15:49:26.514 [Test worker] INFO com.phonebook.utils.MyListener -- List size0
+15:49:26.516 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************************
+15:49:26.516 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.xpath: //button[.='Sign Out']
+15:49:26.516 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:26.551 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.xpath: //button[.='Sign Out']
+15:49:26.551 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:27.058 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: [href='/login']
+15:49:27.059 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:27.073 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: [href='/login']
+15:49:27.073 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:27.185 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.name: password
+15:49:27.185 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:27.214 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.name: password
+15:49:27.214 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:27.373 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.name: password
+15:49:27.373 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:27.393 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.name: password
+15:49:27.393 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:27.481 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.name: password
+15:49:27.481 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:27.496 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.name: password
+15:49:27.496 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:27.582 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.name: registration
+15:49:27.582 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:27.603 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.name: registration
+15:49:27.603 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:27.729 [Test worker] INFO com.phonebook.utils.MyListener -- The test has a problem
+15:49:27.729 [Test worker] INFO com.phonebook.utils.MyListener -- ***********************************
+15:49:27.729 [Test worker] INFO com.phonebook.utils.MyListener -- Method->alert
+15:49:27.729 [Test worker] INFO com.phonebook.utils.MyListener -- ************************************
+15:49:27.729 [Test worker] INFO com.phonebook.utils.MyListener -- TargetException-->org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: chrome=134.0.6998.178)
+Build info: version: '4.30.0', revision: '509c7f17cc*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a05f90f385cdf5c81e3375878cc44a4b, getAlertText {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\situk\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51830}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51830/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a05f90f385cdf5c81e3375878cc44a4b
+15:49:27.729 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:27.729 [Test worker] INFO com.phonebook.utils.MyListener -- Object target-->org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator@6481dce5
+15:49:27.729 [Test worker] INFO com.phonebook.utils.MyListener -- **************************************
+15:49:28.270 [Test worker] INFO com.phonebook.utils.MyListener -- Before find elementsBy.cssSelector: .login_login__3EHKB>div
+15:49:28.270 [Test worker] INFO com.phonebook.utils.MyListener -- *******************************************
+15:49:28.307 [Test worker] INFO com.phonebook.utils.MyListener -- List size1
+15:49:28.307 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************************
+15:49:28.308 [Test worker] INFO com.phonebook.tests.TestBase -- PASSED: existedUserRegistrationNegativeTest
+15:49:28.308 [Test worker] INFO com.phonebook.tests.TestBase -- Stop test
+15:49:28.308 [Test worker] INFO com.phonebook.tests.TestBase -- ==========================================
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

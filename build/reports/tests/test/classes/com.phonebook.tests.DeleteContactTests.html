@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class com.phonebook.tests.DeleteContactTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class com.phonebook.tests.DeleteContactTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.phonebook.tests.html">com.phonebook.tests</a> &gt; DeleteContactTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">1</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.371s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="deleteContactTest"></a>
+<h3 class="failures">deleteContactTest</h3>
+<span class="code">
+<pre>org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text :  Phone not valid: Phone number must contain only digits! And length min 10, max 15!}
+  (Session info: chrome=134.0.6998.178):  Phone not valid: Phone number must contain only digits! And length min 10, max 15!
+Build info: version: '4.30.0', revision: '509c7f17cc*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a05f90f385cdf5c81e3375878cc44a4b, findElements {value=(//div[contains(@class,'contact-item-detailed_card')]//button[text()='Remove'])[1], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\situk\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51830}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51830/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a05f90f385cdf5c81e3375878cc44a4b
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:136)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at app//org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElements(ElementLocation.java:182)
+	at app//org.openqa.selenium.remote.ElementLocation.findElements(ElementLocation.java:103)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:381)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.findElements(RemoteWebDriver.java:375)
+	at jdk.internal.reflect.GeneratedMethodAccessor24.invoke(Unknown Source)
+	at java.base@17.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.13/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.openqa.selenium.support.decorators.WebDriverDecorator.call(WebDriverDecorator.java:315)
+	at app//org.openqa.selenium.support.decorators.DefaultDecorated.call(DefaultDecorated.java:48)
+	at app//org.openqa.selenium.support.decorators.WebDriverDecorator.lambda$createProxyFactory$3(WebDriverDecorator.java:405)
+	at net.bytebuddy.renamed.java.lang.Object$ByteBuddy$0zxv0T6J.findElements(Unknown Source)
+	at app//com.phonebook.fw.BaseHelper.isElementPresent(BaseHelper.java:23)
+	at app//com.phonebook.fw.ContactHelper.deleteContact(ContactHelper.java:57)
+	at app//com.phonebook.tests.DeleteContactTests.deleteContactTest(DeleteContactTests.java:44)
+	at java.base@17.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.13/java.lang.reflect.Method.invoke(Method.java:568)
+	at app//org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at app//org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at app//org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at app//org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at app//org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at app//org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at app//org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at app//org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base@17.0.13/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at app//org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at app//org.testng.TestRunner.run(TestRunner.java:616)
+	at app//org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at app//org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at app//org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at app//org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at app//org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at app//org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at app//org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at app//org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at app//org.testng.TestNG.runSuites(TestNG.java:1112)
+	at app//org.testng.TestNG.run(TestNG.java:1079)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:153)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:95)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
+	at java.base@17.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@17.0.13/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base@17.0.13/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@17.0.13/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+	at jdk.proxy1/jdk.proxy1.$Proxy4.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:121)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="failures">deleteContactTest</td>
+<td class="failures">0.371s</td>
+<td class="failures">failed</td>
+</tr>
+</table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>15:49:28.309 [Test worker] INFO com.phonebook.tests.TestBase -- Start test: deleteContactTest with parameters []
+15:49:28.309 [Test worker] INFO com.phonebook.utils.MyListener -- Before find elementsBy.cssSelector: [href='/login']
+15:49:28.309 [Test worker] INFO com.phonebook.utils.MyListener -- *******************************************
+15:49:28.324 [Test worker] INFO com.phonebook.utils.MyListener -- List size1
+15:49:28.324 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************************
+15:49:28.324 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: [href='/login']
+15:49:28.324 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:28.347 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: [href='/login']
+15:49:28.347 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:28.496 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.name: email
+15:49:28.496 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:28.520 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.name: email
+15:49:28.520 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:28.677 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.name: email
+15:49:28.677 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:28.692 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.name: email
+15:49:28.692 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:28.760 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.name: email
+15:49:28.760 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:28.777 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.name: email
+15:49:28.777 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:28.872 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.name: password
+15:49:28.872 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:28.885 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.name: password
+15:49:28.885 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:28.990 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.name: password
+15:49:28.990 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:29.009 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.name: password
+15:49:29.009 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:29.044 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.name: password
+15:49:29.044 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:29.047 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.name: password
+15:49:29.047 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:29.119 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.name: login
+15:49:29.119 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:29.136 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.name: login
+15:49:29.136 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:29.273 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: [href='/add']
+15:49:29.273 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:29.556 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: [href='/add']
+15:49:29.556 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:29.701 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: input:nth-child(1)
+15:49:29.705 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:29.721 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: input:nth-child(1)
+15:49:29.721 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:29.851 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: input:nth-child(1)
+15:49:29.851 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:29.858 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: input:nth-child(1)
+15:49:29.858 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:29.924 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: input:nth-child(1)
+15:49:29.924 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:29.924 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: input:nth-child(1)
+15:49:29.924 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:29.958 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: input:nth-child(2)
+15:49:29.958 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:29.973 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: input:nth-child(2)
+15:49:29.973 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:30.041 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: input:nth-child(2)
+15:49:30.041 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:30.041 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: input:nth-child(2)
+15:49:30.041 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:30.101 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: input:nth-child(2)
+15:49:30.101 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:30.109 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: input:nth-child(2)
+15:49:30.109 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:30.190 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: input:nth-child(3)
+15:49:30.190 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:30.209 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: input:nth-child(3)
+15:49:30.209 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:30.352 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: input:nth-child(3)
+15:49:30.352 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:30.357 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: input:nth-child(3)
+15:49:30.357 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:30.423 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: input:nth-child(3)
+15:49:30.439 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:30.452 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: input:nth-child(3)
+15:49:30.452 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:30.523 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: input:nth-child(4)
+15:49:30.523 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:30.540 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: input:nth-child(4)
+15:49:30.540 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:30.678 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: input:nth-child(4)
+15:49:30.678 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:30.699 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: input:nth-child(4)
+15:49:30.699 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:30.751 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: input:nth-child(4)
+15:49:30.751 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:30.769 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: input:nth-child(4)
+15:49:30.769 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:30.831 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: input:nth-child(5)
+15:49:30.831 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:30.856 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: input:nth-child(5)
+15:49:30.856 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:30.990 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: input:nth-child(5)
+15:49:30.990 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:31.007 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: input:nth-child(5)
+15:49:31.007 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:31.078 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: input:nth-child(5)
+15:49:31.078 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:31.094 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: input:nth-child(5)
+15:49:31.094 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:31.183 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: input:nth-child(6)
+15:49:31.183 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:31.197 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: input:nth-child(6)
+15:49:31.197 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:31.340 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: input:nth-child(6)
+15:49:31.340 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:31.356 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: input:nth-child(6)
+15:49:31.356 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:31.422 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: input:nth-child(6)
+15:49:31.422 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:31.441 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: input:nth-child(6)
+15:49:31.441 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:31.495 [Test worker] INFO com.phonebook.utils.MyListener -- The locator will findBy.cssSelector: .add_form__2rsm2 button
+15:49:31.495 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:31.522 [Test worker] INFO com.phonebook.utils.MyListener -- The locator isBy.cssSelector: .add_form__2rsm2 button
+15:49:31.522 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************
+15:49:31.654 [Test worker] INFO com.phonebook.utils.MyListener -- Before find elementsBy.cssSelector: .contact-item_card__2SOIM
+15:49:31.654 [Test worker] INFO com.phonebook.utils.MyListener -- *******************************************
+15:49:32.015 [Test worker] INFO com.phonebook.utils.MyListener -- List size0
+15:49:32.015 [Test worker] INFO com.phonebook.utils.MyListener -- **********************************************
+15:49:32.016 [Test worker] INFO com.phonebook.utils.MyListener -- Before find elementsBy.xpath: (//div[contains(@class,'contact-item-detailed_card')]//button[text()='Remove'])[1]
+15:49:32.016 [Test worker] INFO com.phonebook.utils.MyListener -- *******************************************
+15:49:32.023 [Test worker] INFO com.phonebook.utils.MyListener -- The test has a problem
+15:49:32.023 [Test worker] INFO com.phonebook.utils.MyListener -- ***********************************
+15:49:32.023 [Test worker] INFO com.phonebook.utils.MyListener -- Method-&gt;findElements
+15:49:32.023 [Test worker] INFO com.phonebook.utils.MyListener -- ************************************
+15:49:32.023 [Test worker] INFO com.phonebook.utils.MyListener -- TargetException--&gt;org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text :  Phone not valid: Phone number must contain only digits! And length min 10, max 15!}
+  (Session info: chrome=134.0.6998.178):  Phone not valid: Phone number must contain only digits! And length min 10, max 15!
+Build info: version: '4.30.0', revision: '509c7f17cc*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.13'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a05f90f385cdf5c81e3375878cc44a4b, findElements {value=(//div[contains(@class,'contact-item-detailed_card')]//button[text()='Remove'])[1], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.178, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\situk\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51830}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51830/devtoo..., se:cdpVersion: 134.0.6998.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a05f90f385cdf5c81e3375878cc44a4b
+15:49:32.024 [Test worker] INFO com.phonebook.utils.MyListener -- *************************************
+15:49:32.024 [Test worker] INFO com.phonebook.utils.MyListener -- Object target--&gt;ChromeDriver: chrome on windows (a05f90f385cdf5c81e3375878cc44a4b)
+15:49:32.024 [Test worker] INFO com.phonebook.utils.MyListener -- **************************************
+15:49:32.519 [Test worker] ERROR com.phonebook.tests.TestBase -- FAILED: deleteContactTest Screenshot path: C:\QA\QA_PhonebookUI\screenshots\screen-1745848172506.png
+15:49:32.519 [Test worker] INFO com.phonebook.tests.TestBase -- Stop test
+15:49:32.519 [Test worker] INFO com.phonebook.tests.TestBase -- ==========================================
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.11</a> at Apr 28, 2025, 3:49:57 PM</p>
+</div>
+</div>
+</body>
+</html>
