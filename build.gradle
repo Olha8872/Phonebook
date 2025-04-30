@@ -44,5 +44,6 @@ task qa1(type: Test) {
     tasks.withType(JavaCompile) {
         options.encoding = 'UTF-8'
     }
+
 }
 
