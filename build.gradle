@@ -12,38 +12,42 @@ repositories {
 dependencies {
     implementation 'org.seleniumhq.selenium:selenium-java:4.30.0'
     implementation 'org.testng:testng:7.11.0'
-
     implementation 'ch.qos.logback:logback-classic:1.5.18'
 
-    testImplementation 'org.testng:testng:7.11.0'  // Зависимость для TestNG
-    testImplementation 'org.seleniumhq.selenium:selenium-java:4.7.0'  // Зависимость для Selenium
+    testImplementation 'org.testng:testng:7.11.0'
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.7.0'
 }
 
 test {
     useTestNG()
-}
 
-task qa1(type: Test) {
-    useTestNG() {
-        // Проверка на доступность параметра suite1 и загрузка соответствующего файла
-        if (project.hasProperty("suite1")) {
-            suites 'src/test/resources/testng.xml'
-        } else if (project.hasProperty("suite2")) {
-            suites 'src/test/resources/smoky.xml'
-        } else if (project.hasProperty("suite3")) {
-            suites 'src/test/resources/negative.xml'
-        }
+    // Указываем, какой файл конфигурации TestNG использовать в зависимости от переданных параметров
+    if (project.hasProperty("suite1")) {
+        suites 'src/test/resources/testng.xml'
+    } else if (project.hasProperty("suite2")) {
+        suites 'src/test/resources/smoky.xml'
+    } else if (project.hasProperty("suite3")) {
+        suites 'src/test/resources/negative.xml'
     }
 
-    // Если задан браузер, передаем его как системное свойство
+    // Устанавливаем браузер как системное свойство, если передан параметр browser
     if (project.hasProperty('browser')) {
         systemProperty 'browser', project.browser
     }
 
-    // Установка кодировки для компиляции
-    tasks.withType(JavaCompile) {
-        options.encoding = 'UTF-8'
+    // Настройки отчетности
+    reports {
+        junitXml.required = true
+        html.required = true
     }
 
+    // Логирование
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
 
+// Установка кодировки компиляции глобально
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}

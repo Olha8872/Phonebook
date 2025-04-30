@@ -1,6 +1,5 @@
 .gradle
 
-
 *.idea
 *.iws
 *.iml
@@ -14,5 +13,3 @@ gradlew.bat
 *.log
 *.png
 
-### Mac OS ###
-.DS_Store
