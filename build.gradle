@@ -50,4 +50,5 @@ test {
 // Установка кодировки компиляции глобально
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
+
 }
